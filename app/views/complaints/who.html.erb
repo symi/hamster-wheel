@@ -2,7 +2,7 @@
 <% content_for :title, "Who" %>
 <h1>Who are you complaining about?</h1>
   <p> choose the correct letters of the company you are complaining about</p>
-   <form>
+   <%= form_tag who_path(@complaint_slug) do %>
     <select name = "Company_name_1">
       <option value = "0">Choose the first character</option>
       <option value = "a">a</option>
@@ -28,7 +28,7 @@
       <option value = "u">u</option>
       <option value = "v">v</option>
       <option value = "w">w</option>
-      <option value = "x">x</option> 
+      <option value = "x">x</option>
       <option value = "y">y</option>
       <option value = "z">z</option>
       <option value = "1">1</option>
@@ -38,8 +38,8 @@
       <option value = "5">5</option>
       <option value = "6">6</option>
       <option value = "7">7</option>
-      <option value = "8">8</option>  
-      <option value = "9">9</option>      
+      <option value = "8">8</option>
+      <option value = "9">9</option>
     </select>
        <select name = "Company_name_2">
       <option value = "0">Choose the second character</option>
@@ -66,7 +66,7 @@
       <option value = "u">u</option>
       <option value = "v">v</option>
       <option value = "w">w</option>
-      <option value = "x">x</option> 
+      <option value = "x">x</option>
       <option value = "y">y</option>
       <option value = "z">z</option>
       <option value = "1">1</option>
@@ -76,8 +76,8 @@
       <option value = "5">5</option>
       <option value = "6">6</option>
       <option value = "7">7</option>
-      <option value = "8">8</option>  
-      <option value = "9">9</option>      
+      <option value = "8">8</option>
+      <option value = "9">9</option>
     </select>
        <select name = "Company_name_3">
       <option value = "0">Choose the third character</option>
@@ -97,14 +97,14 @@
       <option value = "n">n</option>
       <option value = "o">o</option>
       <option value = "p">p</option>
-      <option value = "q">q</option>
+      <option valueCompany_name_1=0&Company_name_2=0&Company_name_3=0 = "q">q</option>
       <option value = "r">r</option>
       <option value = "s">s</option>
       <option value = "t">t</option>
       <option value = "u">u</option>
       <option value = "v">v</option>
       <option value = "w">w</option>
-      <option value = "x">x</option> 
+      <option value = "x">x</option>
       <option value = "y">y</option>
       <option value = "z">z</option>
       <option value = "1">1</option>
@@ -114,8 +114,9 @@
       <option value = "5">5</option>
       <option value = "6">6</option>
       <option value = "7">7</option>
-      <option value = "8">8</option>  
-      <option value = "9">9</option>      
+      <option value = "8">8</option>
+      <option value = "9">9</option>
     </select>
-  </form>
+    <input type="submit"/>
+  <% end %>
 <%= link_to "Next Page", where_path %>
