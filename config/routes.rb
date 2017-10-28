@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/where/:complaint_slug/', to: "complaints#where", as: "where"
   get '/when/:complaint_slug/', to: "complaints#when", as: "when"
   get '/why/:complaint_slug/', to: "complaints#why", as: "why"
+  get '/no/:complaint_slug/', to:"complaints#no", as: "no"
 
   post '/who/:complaint_slug/', to: "complaints#trans"
   post '/what/:complaint_slug/', to: "complaints#trans"

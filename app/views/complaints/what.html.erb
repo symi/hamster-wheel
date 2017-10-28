@@ -1,0 +1,20 @@
+<% content_for :title, "What" %>
+<h1>What happened?</h1>
+<%= form_with scope: :why, local: true do |form| %>
+  <p>What happen?<br>
+    <p><%= form.text_area :why %></p>
+  </p>
+  <p>what was you wearing?<br>
+    <p><%= form.text_field :clothes %></p>
+  </p>
+    <p>Name any objects involved?<br>
+    <p><%= form.text_field :objects %></p>
+  </p>
+    </p>
+    <p>Whats 5 x 2?<br>
+    <p><%= form.text_field :numbers %></p>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
