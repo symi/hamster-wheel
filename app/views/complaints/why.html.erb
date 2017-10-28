@@ -1,4 +1,7 @@
-<% content_for :title, "When" %>
+<% content_for :title, "Why" %>
+<div class = "txtUpsideDown">
+    <div class ="scale">
+      <div class ="leaves">
 <h1>Why do you think this happened?</h1>
 <%= form_with scope: :why, local: true do |form| %>
   <p>Why did this happen?<br>
@@ -14,3 +17,6 @@
     <%= form.submit %>
   </p>
 <% end %>
+    </div>
+  </div>
+</div>
