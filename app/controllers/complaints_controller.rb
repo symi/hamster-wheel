@@ -1,8 +1,8 @@
 class ComplaintsController < ApplicationController
-  before_action :complaint_slug, except: :index
+  before_action :complaint_slug
 
   def index
-    @complaint = Complaint.create(complaint_slug: SecureRandom.hex(4).to_s)
+    @complaint_slug ||= Complaint.create(complaint_slug: SecureRandom.hex(4).to_s).complaint_slug
   end
 
   def who
