@@ -1,11 +1,11 @@
 <% content_for :title, "where" %>
 <h1>Where are you complaining about?</h1>
 </br>
-  <canvas id = "map-canvas" class = "canvas">
-  </canvas>
+  <div id = "map", style='width: 800px; height: 400px;'>
+  </div>
 <script>
 handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map-canvas'}}, function(){
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers([
     {
       "lat": 0,
@@ -16,4 +16,14 @@ handler.buildMap({ provider: {}, internal: {id: 'map-canvas'}}, function(){
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
+handler.addListener('click', function(e) {
+  placeMarkerAndPanTo(e.latLng, map);
+});
+function placeMarkerAndPanTo(latLng, map) {
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map
+  });
+  map.panTo(latLng);
+}
 </script>
