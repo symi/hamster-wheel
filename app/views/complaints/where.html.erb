@@ -1,6 +1,13 @@
-<% content_for :title, "where" %>
+<% content_for :title, "Where" %>
 <h1>Where are you complaining about?</h1>
 </br>
+<%= form_for :complaints do |f| %>
+    Company Address:</br> <%= f.text_field :address %></br>
+<p></p>
+<%= f.submit %>
+<p></p>
+<% end %>   
+
   <canvas id = "map-canvas" class = "canvas">
   </canvas>
 <script>

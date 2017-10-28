@@ -1,0 +1,18 @@
+<% content_for :title, "When" %>
+<h1>When did this happen?</h1>
+<%= form_with scope: :when, local: true do |form| %>
+  <p>
+    <%= form.label :when %><br>
+    <%= form.text_field :when, id: 'datepicker', size:10 %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+

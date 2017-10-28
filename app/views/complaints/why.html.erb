@@ -1,0 +1,16 @@
+<% content_for :title, "When" %>
+<h1>Why do you think this happened?</h1>
+<%= form_with scope: :why, local: true do |form| %>
+  <p>Why did this happen?<br>
+    <p><%= form.text_area :why %></p>
+  </p>
+  <p>How did you respond?<br>
+    <p><%= form.text_field :how %></p>
+  </p>
+    <p>Do you think you deserve it?<br>
+    <p><%= form.text_field :deserve %></p>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
