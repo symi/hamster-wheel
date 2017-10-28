@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic Useage:
 
-Things you may want to cover:
+Whenever you pull,
 
-* Ruby version
+  bundle install  #install any new gems
 
-* System dependencies
+  rails s  #starts the rails server
 
-* Configuration
+  and/or
 
-* Database creation
+  rails db:migrate  #if there is a pending migration error
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+then connect to localhost:3000
