@@ -19,11 +19,13 @@ class ComplaintsController < ApplicationController
   def what
 
   end
-  
+
   def why
 
   end
+
   def trans
 
   end
+
 end
