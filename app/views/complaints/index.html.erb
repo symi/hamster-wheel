@@ -1,5 +1,27 @@
-<div id="app">
-  COMPLAINT SLUG: <%= @complaint_slug %> <br>
-  COMPLAINT WHO URL: <%= "#{request.protocol}#{request.host_with_port}" + who_path(complaint_slug: @complaint_slug) %> <br>
-  <%= link_to  "COMPLAIN", who_path(complaint_slug: @complaint_slug) %>
+<div id="slug" data-slug="<%= "#{request.protocol}#{request.host_with_port}" + who_path(complaint_slug: @complaint_slug) %>">
+  Welcome to the complaints form....
+  <div id="desktop" class="hide">
+    You are on desktop please scan QR code below...
+    <canvas id="qr"></canvas>
+  </div>
+  <div id="mobile" class="hide">
+    <%= link_to  "COMPLAIN", who_path(complaint_slug: @complaint_slug) %>
+  </div>
 </div>
+
+<script>
+$(function () {
+  var mobile = document.body.clientWidth < 800;
+
+  if (mobile) {
+    $('#mobile').removeClass('hide');
+  } else {
+    $('#desktop').removeClass('hide');
+
+    qrcodelib.toCanvas(document.getElementById('qr'), document.getElementById('slug').dataset.slug, function (error) {
+      if (error) console.error(error)
+      console.log('success!');
+    });
+  }
+});
+</script>
