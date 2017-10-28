@@ -1,19 +1,20 @@
-<% content_for :title, "where" %>
-<h1>Where are you complaining about?</h1>
-</br>
-  <canvas id = "canvas" class = "canvas">
-  </canvas>
-<script>
+//= require underscore
+//= require gmaps/google
+
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'canvas'}}, function(){
   markers = handler.addMarkers([
     {
       "lat": 0,
       "lng": 0,
+      "picture": {
+        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+        "width":  32,
+        "height": 32
+      },
       "infowindow": "hello!"
     }
   ]);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
 });
-</script>
