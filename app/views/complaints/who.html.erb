@@ -1,1 +1,9 @@
  <%= @complaint_slug %>
+<% content_for :title, "Who" %>
+<h1>Who are you complaining about?</h1>
+<p> choose the correct letters of the company you are complaining about</p>
+<option value = "0">Choose the first character</option>
+<option value = "1">a</option>
+<option value = "2">b</option>
+
+<%= link_to "Next Page", where_path %>
