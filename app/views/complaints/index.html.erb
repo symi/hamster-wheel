@@ -1,1 +1,5 @@
+<div id="app">
+  <%= @complaint.complaint_slug %>
 
+  <%= link_to  "COMPLAIN", who_path(complaint_slug: @complaint.complaint_slug) %>
+</div>
