@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get '/when/:complaint_slug/', to: "complaints#when", as: "when"
   get '/why/:complaint_slug/', to: "complaints#why", as: "why"
 
-  post '/who/:complaint_slug/' to: "complaints#trans"
-  post '/what/:complaint_slug/' to: "complaints#trans"
-  post '/where/:complaint_slug/' to: "complaints#trans"
-  post '/when/:complaint_slug/' to: "complaints#trans"
-  post '/why/:complaint_slug/' to: "complaints#trans"
+  post '/who/:complaint_slug/', to: "complaints#trans"
+  post '/what/:complaint_slug/', to: "complaints#trans"
+  post '/where/:complaint_slug/', to: "complaints#trans"
+  post '/when/:complaint_slug/', to: "complaints#trans"
+  post '/why/:complaint_slug/', to: "complaints#trans"
 end

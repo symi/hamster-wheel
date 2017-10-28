@@ -119,4 +119,12 @@
     </select>
     <input type="submit"/>
   <% end %>
+
+<% if flash[:possible] %>
+  <% flash[:possible].each do |poss| %>
+    <%= poss %><br>
+  <% end %>
+<% end %>
+
+
 <%= link_to "Next Page", where_path %>
