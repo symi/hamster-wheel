@@ -119,11 +119,12 @@
     </select>
     <input type="submit"/>
   <% end %>
-
 <% if flash[:possible] %>
+  <div id= "possibles" >
   <% flash[:possible].each do |poss| %>
     <%= poss %><br>
   <% end %>
+  </div>
 <% end %>
 
 
