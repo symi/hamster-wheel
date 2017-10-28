@@ -1,0 +1,19 @@
+<% content_for :title, "where" %>
+<h1>Where are you complaining about?</h1>
+</br>
+  <canvas id = "map-canvas" class = "canvas">
+  </canvas>
+<script>
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map-canvas'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": 0,
+      "lng": 0,
+      "infowindow": "hello!"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
