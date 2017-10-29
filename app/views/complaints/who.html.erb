@@ -145,7 +145,7 @@ $(function () {
   window.addEventListener('shake', function () {
     window.didShake++;
     if (window.didShake === 2) {
-      $('#message').text('thank you for confirming as a human... please continue.')
+      $('#message').text('thank you for confirming as a human...')
     }
   }, false);
 
@@ -180,7 +180,11 @@ $(function () {
   $('#link').on('click', function(event) {
     if ($('#completed').length) {
       if (window.didShake) {
-        window.location.href = $('#link').data('path');
+        navigator.vibrate(100,100,200,300,500,800,1300);
+
+        setTimeout(function () {
+          window.location.href = $('#link').data('path');
+        }, 3300)
       }
     } else {
       alert('please complete the form first, before proceeding...');
