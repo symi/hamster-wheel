@@ -12,7 +12,7 @@
 
   <div id="message">To ensure the physics of time isn't related to internet connection, please toggle on/off airplane mode...</div>
 
-  <button id="link" data-path="<%= what%>">Next Page</button>
+  <button id="link" data-path="<%= what_path(@complaint_slug)%>">Next Page</button>
 
 <% end %>
   <script>
@@ -124,4 +124,3 @@ if('ondeviceproximity' in window){
 
 }); %>
   </script>
-

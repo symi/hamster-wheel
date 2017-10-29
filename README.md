@@ -6,7 +6,7 @@ Whenever you pull,
 
   bundle install  #install any new gems
 
-  rails s  #starts the rails server
+  rails s puma -b 'ssl://0.0.0.0:9291?key=server.key&cert=server.crt&verify_mode=none'  #starts the rails server
 
   and/or
 
