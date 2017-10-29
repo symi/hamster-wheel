@@ -1,30 +1,33 @@
 <% content_for :title, "Why" %>
 <div align = center class="page">
-<div class = "txtUpsideDown">
-    <div align = center class ="scale">
-      <div class ="leaves">
-      <h1>Why do you think this happened?</h1>
-      <hr>
-      <%= form_with scope: :why, local: true do |form| %>
-      <p>Why did this happen?<br>
+<div align = center class ="scale">
+<div class ="leaves">
+  <h1>Why do you think this happened?</h1>
+  <hr>
+<%= form_with scope: :why, local: true do |form| %>
+  <p>Why did this happen?<br>
     <p><%= form.text_area :why %></p>
   </p>
   <p>How did you respond?<br>
     <p><%= form.text_field :how %></p>
   </p>
-    <p>Do you think you deserve it?<br>
+  <p>Do you think you deserve it?<br>
     <p><%= form.text_field :deserve %></p>
   </p>
   <p>
-    <%= form.submit %>
+    <div id="message">Go on smile! you've reached the end!</div>
+    <button id="finish">Submit final complaint</button>
   </p>
 <% end %>
-<div id="container">
+</div>
+</div>
+</div>
+<div id="container" style="visibility:hidden">
   <video id="videoel" width="400" height="300" preload="auto" loop playsinline autoplay>
   </video>
   <canvas id="overlay" width="400" height="300"></canvas>
-</div
-<div id="emotion_container">
+</div>
+<div id="emotion_container" style="visibility:hidden">
   <div id="emotion_icons">
     <div class="emotion_icon" id="icon1" >angry </div>
     <div class="emotion_icon" id="icon2" >sad </div>
@@ -35,6 +38,15 @@
 </div>
 
 <script>
+
+$(function () {
+  $('#finish').on('click', function () {
+    if (window.smile) {
+      alert("Thanks for the complaint, your feedback is valued... remember to keep smiling.")
+    }
+  })
+});
+
 var vid = document.getElementById('videoel');
 var vid_width = vid.width;
 var vid_height = vid.height;
