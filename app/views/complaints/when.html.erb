@@ -9,31 +9,26 @@
   <p>
     <%= form.submit %>
   </p>
-
+<% end %>
   <div id="message">To ensure the physics of time isn't related to internet connection, please toggle on/off airplane mode...</div>
 
   <button id="link" data-path="<%= what_path(@complaint_slug)%>">Next Page</button>
 
-<% end %>
+
   <script>
   var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   var type = connection.type;
   var off = false;
-  var on = false;
 
   function updateConnectionStatus() {
     if (connection.type === 'none' && type === 'cellular') {
       off = true;
       $('#message').text('looks like time hasnt stopped, lets get back online!');
     }
-
-    if (connection.type !== 'none' && off) {
-      on = true;
-    }
   }
 
   $('#link').on('click', function(event) {
-    if (off && on) {
+    if (off) {
       window.location.href = $('#link').data('path');
     } else {
       alert("please check time physics first!");
