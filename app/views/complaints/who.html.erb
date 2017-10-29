@@ -121,9 +121,13 @@
   <% end %>
 <% if flash[:possible] %>
   <div id= "completed" >
-  <% flash[:possible].each do |poss| %>
-    <%= poss %><br>
-  <% end %>
+  <select>
+    <option>Please select from the short list</option>
+      <% flash[:possible].each do |poss| %>
+        <option><%= poss %></option>
+      <% end %>
+  </select>
+
   </div>
 <% end %>
 

@@ -129,3 +129,20 @@
           height: 100%;
           border-radius: 8px;
       }
+
+      select {
+        display: block;
+        margin: 0.5em 0 !important;
+      }
+
+      #link {
+        float: right;
+      }
+
+      hr {
+        margin-top: 40px !important;
+      }
+
+      #message {
+        color: red;
+      }
