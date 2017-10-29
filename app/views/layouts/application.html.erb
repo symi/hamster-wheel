@@ -11,10 +11,48 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   </head>
 
-  <body>
+  <body class="body">
+      <div class="header1">
+     <div class = "img2">
+    <%= image_tag 'os-logo2.png' %>
+    </div>
+    </div> 
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left"> 
+    <div class="navbar">
+    <button type="button" class="btn">Who is it about</button>
+    <button type="button" class="btn">Where did it happen</button>
+    <button type="button" class="btn">When did it happen</button>
+    <button type="button" class="btn">What is it about</button>
+    <button type="button" class="btn">Why</button>
+    </div>
     <%= yield %>
+    <hr>
+    <footer class="container-fluid text-center">
+  <p>
+
+The Ombudsman Service Limited. Registered office: 3300 Daresbury Park, Warrington, Cheshire, WA4 4HS. Registered in England & Wales. No. 4351294
+
+Cookie Settings | Privacy Policy | Accessibility Statement | Data Protection Statement
+</p>
+</footer> 
+        </div>
+    <div class="col-sm-2 sidenav">
+
+      </div>
+      <div class="header1">
+    </div>
+    </div>
+  </div>
+
+  </div>
   </body>
 </html>
