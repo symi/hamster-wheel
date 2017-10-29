@@ -15,7 +15,7 @@
     <p><%= form.text_field :deserve %></p>
   </p>
   <p>
-    <div id="message">Go on smile! you've reached the end!</div>
+    <div id="message">Go on smile! you've reached the end! <br /><span id="second"></span></div>
     <button id="finish">Submit final complaint</button>
   </p>
 <% end %>
@@ -27,7 +27,7 @@
   </video>
   <canvas id="overlay" width="400" height="300"></canvas>
 </div>
-<div id="emotion_container" style="visibility:hidden">
+<div id="emotion_container">
   <div id="emotion_icons">
     <div class="emotion_icon" id="icon1" >angry </div>
     <div class="emotion_icon" id="icon2" >sad </div>
@@ -44,7 +44,34 @@ $(function () {
     if (window.smile) {
       alert("Thanks for the complaint, your feedback is valued... remember to keep smiling.")
     }
-  })
+  });
+
+  var intID = setInterval(function () {
+    var angry = $('#icon1').text();
+    var sad = $('#icon2').text();
+    var surprised = $('#icon3').text();
+    var happy = $('#icon4').text();
+
+    if (happy) {
+      if (!smileStart) {
+        window.smileStart = new Date();
+      } else {
+        if (new Date() - smileStart > 2000) {
+          window.smile = true;
+          $('#message').text('see you feel better now smiling and complaining.')
+          clearInterval(intID);
+        }
+      }
+    } else {
+      var word = '';
+    window.smileStart = undefined;
+      if (angry) word = 'stop feeling ANGRY! you are complaint, that makes humans cheerful!';
+      if (sad) word = 'stop feeling SAD, you\'ve nearly finished';
+      if (surprised) word = 'im SURPRISED that you are surprised';
+
+      $('#second').text(word)
+    }
+  }, 1000);
 });
 
 var vid = document.getElementById('videoel');
