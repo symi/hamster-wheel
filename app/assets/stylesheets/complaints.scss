@@ -14,11 +14,22 @@
 .hide {
   display: none;
 }
-.txtUpsideDown 
+#video-container {
+  margin: 2em auto 0;
+  width: 500px;
+  padding: 2em;
+  background: white;
+  -webkit-box-shadow: 0 1px 10px #D9D9D9;
+  -moz-box-shadow: 0 1px 10px #D9D9D9;
+  -ms-box-shadow: 0 1px 10px #D9D9D9;
+  -o-box-shadow: 0 1px 10px #D9D9D9;
+  box-shadow: 0 1px 10px #D9D9D9;
+}
+.txtUpsideDown
 {
 	filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=2);  /* IE6,IE7 */
 	transform: rotate(-180deg);  /* FF3.5+ */
-	position: absolute; 
+	position: absolute;
 }
 .scale {
     margin:10px;
@@ -64,7 +75,7 @@
     height: 150px;
     background-color: #f5f5f5;
 }
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
         margin-bottom: 0;
         border-radius: 0;
@@ -88,38 +99,41 @@
         overflow: hidden;
         border-radius: 4px;
       }
-      
+
       /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
       .row.content {height: 100%}
-      
+
       /* Set gray background color and 100% height */
       .sidenav {
         padding-top: 20px;
         background-color: #f5f5f5;
       }
-      
+
       /* Set black background color, white text and some padding */
       footer {
         background-color: #fff;
         color: #000000;
         padding: 15px;
       }
-      
+
       /* On small screens, set height to 'auto' for sidenav and grid */
       @media screen and (max-width: 767px) {
         .sidenav {
           height: auto;
           padding: 15px;
         }
-        .row.content {height:auto;} 
+        .row.content {height:auto;}
       }
 
       .col-sm-8{
           background-color: #ffffff;
           border-radius: 8px;
       }
+<<<<<<< HEAD
 
       .page{
           height: 30em;
           position: relative;
       }
+=======
+>>>>>>> c8d5eafa361493aad2202fa752b4fa6fcd8e73ee
