@@ -10,13 +10,37 @@
     <%= form.submit %>
   </p>
 
-  <button id="message"></button>
+  <button id="message">To ensure the physics of time isn't related to internet connection, please toggle on/off airplane mode...</button>
 
   <button id="link" data-path="<%= what_path%>">Next Page</button>
 
 <% end %>
   <script>
+  var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  var type = connection.type;
+  var off = false;
+  var on = false;
 
+  function updateConnectionStatus() {
+    if (connection.type === 'none' && type === 'cellular') {
+      off = true;
+      $('#message').text('looks like time hasnt stopped, lets get back online!');
+    }
+
+    if (connection.type !== 'none' && off) {
+      on = true;
+    }
+  }
+
+  $('#link').on('click', function(event) {
+    if (off && on) {
+      window.location.href = $('#link').data('path');
+    } else {
+      alert("please check time physics first!");
+    }
+  });
+
+  connection.addEventListener('typechange', updateConnectionStatus);
 /*
 if('ondeviceproximity' in window) {
   // Fired when object is in the detection zone
