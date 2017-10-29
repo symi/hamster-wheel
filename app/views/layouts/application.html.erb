@@ -18,35 +18,41 @@
   </head>
 
   <body>
-<div class="header"></div>   
+      <div class="header1">
+     <div class = "img2">
+    <%= image_tag 'os-logo2.png' %>
+    </div>
+    </div> 
   <div class="row content">
     <div class="col-sm-2 sidenav">
     </div>
     <div class="col-sm-8 text-left"> 
-    <div class="header1">
-     <div class = "img2">
-    <%= image_tag 'logo.png' %>
+    <div class="navbar">
+    <button type="button" class="btn">Who is it about</button>
+    <button type="button" class="btn">Where did it happen</button>
+    <button type="button" class="btn">When did it happen</button>
+    <button type="button" class="btn">What is it about</button>
+    <button type="button" class="btn">Why</button>
     </div>
-    </div>
-    <nav class="navbar">
-        <p>Home</p> <p>Sectors</p> <p>we cover</p>  <p>About us</p>
-        <p>For consumers</p>
-        <p>For participating companies</p>
-        <p>Company directory</p>
-        <p>News<p>
-      </ul>
-</nav>
     <%= yield %>
+    <hr>
+    <footer class="container-fluid text-center">
+  <p>
+
+The Ombudsman Service Limited. Registered office: 3300 Daresbury Park, Warrington, Cheshire, WA4 4HS. Registered in England & Wales. No. 4351294
+
+Cookie Settings | Privacy Policy | Accessibility Statement | Data Protection Statement
+</p>
+</footer> 
         </div>
     <div class="col-sm-2 sidenav">
 
       </div>
+      <div class="header1">
+    </div>
     </div>
   </div>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
   </div>
   </body>
 </html>
