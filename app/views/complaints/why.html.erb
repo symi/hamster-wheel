@@ -1,19 +1,12 @@
 <% content_for :title, "Why" %>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<div align = center class="page">
 <div class = "txtUpsideDown">
-    <div class ="scale">
+    <div align = center class ="scale">
       <div class ="leaves">
-<h1>Why do you think this happened?</h1>
-<hr>
-<%= form_with scope: :why, local: true do |form| %>
-  <p>Why did this happen?<br>
+      <h1>Why do you think this happened?</h1>
+      <hr>
+      <%= form_with scope: :why, local: true do |form| %>
+      <p>Why did this happen?<br>
     <p><%= form.text_area :why %></p>
   </p>
   <p>How did you respond?<br>
@@ -28,4 +21,5 @@
 <% end %>
     </div>
   </div>
+</div>
 </div>

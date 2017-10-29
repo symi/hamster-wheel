@@ -1,7 +1,9 @@
  <%= @complaint_slug %>
 <% content_for :title, "Who" %>
 <h1>Who are you complaining about?</h1>
+  </br>
   <p> choose the correct letters of the company you are complaining about</p>
+  </br>
    <%= form_tag who_path(@complaint_slug) do %>
     <select name = "Company_name_1">
       <option value = "0">Choose the first character</option>
@@ -128,7 +130,7 @@
 <% end %>
 
 <div id="message">To continue<span id="ambient"> go into a dark room and</span> shake your phone for a few seconds to confirm you are a real person</div>
-
+</br>
 <button id="link" data-path="<%= where_path%>">Next Page</button>
 
 <script>
