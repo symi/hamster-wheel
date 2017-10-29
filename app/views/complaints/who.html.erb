@@ -127,7 +127,7 @@
   </div>
 <% end %>
 
-<div id="message">To continue<span id="ambient"> go into a dark room and</span> shake your phone for 4 seconds to confirm you are a real person</div>
+<div id="message">To continue<span id="ambient"> go into a dark room and</span> shake your phone for a few seconds to confirm you are a real person</div>
 
 <button id="link" data-path="<%= where_path%>">Next Page</button>
 
@@ -145,7 +145,7 @@ $(function () {
   window.addEventListener('shake', function () {
     window.didShake++;
     if (window.didShake === 2) {
-      $('#message').text('thank you for shaking... please continue.')
+      $('#message').text('thank you for confirming as a human... please continue.')
     }
   }, false);
 
