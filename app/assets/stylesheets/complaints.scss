@@ -35,6 +35,7 @@
     margin:10px;
     width:100%;
     height:375px;
+    margin-right: 400px;
     bottom:140px;
 }
 
@@ -50,8 +51,8 @@
 }
 
 .scale {
-    animation: leaves 10s ease-in-out infinite alternate;
-    -webkit-animation: leaves 10s ease-in-out infinite alternate;
+    animation: leaves 20s ease-in-out infinite alternate;
+    -webkit-animation: leaves 20s ease-in-out infinite alternate;
 }
 .nope{
     background-color: #000000;
@@ -126,10 +127,13 @@
 
       .col-sm-8{
           background-color: #ffffff;
-          height: 100%;
           border-radius: 8px;
       }
 
+      .page{
+          height: 30em;
+          position: relative;
+      }
       select {
         display: block;
         margin: 0.5em 0 !important;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028152706) do
+ActiveRecord::Schema.define(version: 20171029050946) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20171028152706) do
     t.string "complaint_slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "address"
+    t.date "date"
+    t.string "why"
+    t.string "clothes"
+    t.string "reason"
+    t.string "how"
+    t.string "deserve"
   end
 
   create_table "hotels", force: :cascade do |t|
