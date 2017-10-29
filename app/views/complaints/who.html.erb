@@ -1,5 +1,13 @@
 
 <% content_for :title, "Who" %>
+<h1>Who are you?</h1>
+<p>Your name?</p>
+<marquee id="name"></marquee>
+<button id="name-select">Select</button><button id="name-stop">Stop</button>
+<br /><br />
+<p>Your phone number?</p>
+<div id="phone">0</div> (touch screen to enter...)
+
 <h1>Who are you complaining about?</h1>
   </br>
   <p> choose the correct letters of the company you are complaining about</p>
@@ -173,5 +181,37 @@ $(function () {
   if (!$('#completed').length) {
     $('#message').hide();
   }
+
+  var letters = ['a'];
+  var currentIndex = 0;
+  var sid = setInterval(function () {
+    if (currentIndex > 15) {
+      clearInterval(sid);
+    }
+
+    if (letters[currentIndex] === 'z') {
+      currentIndex++;
+      letters[currentIndex] = 'a';
+    } else {
+      letters[currentIndex] = String.fromCharCode(letters[currentIndex].charCodeAt(0) + 1)
+    }
+
+    $('#name').text(letters.join(''));
+  }, 100);
+
+  $('#name-select').on('click', function () {
+    currentIndex++;
+    letters[currentIndex] = 'a';
+  });
+
+  $('#name-stop').on('click', function () {
+    clearInterval(sid);
+  });
+
+
+  $(document.body).on('mousemove', _.throttle(function (event) {
+    $('#phone').text(event.clientX * event.clientY);
+  }, 100));
+
 });
 </script>
