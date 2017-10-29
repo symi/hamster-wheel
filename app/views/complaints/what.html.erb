@@ -19,3 +19,41 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<div id="message"></div>
+<button id="link" data-path="<%= why_path(@complaint_slug)%>">Next Page</button>
+
+<script>
+  var battery = navigator.battery || navigator.webkitBattery || navigator.mozBattery;
+
+  function logBattery(battery) {
+
+    if (battery.charging) {
+      $('#message').text('We think the environment is important so rather than charging your phone up, why not unplug it and let a tree live.');
+    } else {
+      window.chargingPass = true;
+    }
+
+    battery.addEventListener('chargingchange', function() {
+        if (!battery.charging) {
+          window.chargingPass = true;
+          $('#message').text('Thanks for saving the environment, ' + (battery.level * 100) '% charge, that will last the day right?' );
+        }
+    }, false);
+  }
+
+  if (navigator.getBattery) {
+      navigator.getBattery().then(logBattery);
+  } else if (battery) {
+      logBattery(battery);
+  }
+
+  $('#link').on('click', function(event) {
+    if (chargingPass) {
+      window.location.href = $('#link').data('path');
+    } else {
+      alert("please check time physics first!");
+    }
+  });
+
+</script>
