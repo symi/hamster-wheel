@@ -37,7 +37,8 @@
     battery.addEventListener('chargingchange', function() {
         if (!battery.charging) {
           window.chargingPass = true;
-          $('#message').text('Thanks for saving the environment, ' + (battery.level * 100) '% charge, that will last the day right?' );
+          $('#message').html('Thanks for saving the environment, ' + (battery.level * 100) + '% charge, that will last the day right?' );
+
         }
     }, false);
   }

@@ -155,33 +155,6 @@ $(function () {
     }
   }, false);
 
-  <%# if('ondevicelight' in window) {
-    window.addEventListener("devicelight", function(event) {
-        window.darkLevel = event.value;
-    });
-
-    window.darkCount = 0;
-
-    var intID = setInterval(function () {
-      document.getElementById('test').innerHTML = darkLevel + ' ' + window.darkCount;
-      if (darkLevel < 10) {
-        window.darkCount++;
-
-        if (window.darkCount >= 3) {
-          clearInterval(intID);
-          window.isDark = true;
-        } else {
-          window.darkCount++;
-        }
-      } else {
-        window.darkCount = 0;
-      }
-    }, 1000);
-  } else {
-    window.isDark = true;
-    $('#ambient').hide();
-  } %>
-
 
   $('#link').on('click', function(event) {
     if ($('#completed').length) {
