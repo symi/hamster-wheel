@@ -11,10 +11,42 @@
     <script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   </head>
 
   <body>
+<div class="header"></div>   
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    </div>
+    <div class="col-sm-8 text-left"> 
+    <div class="header1">
+     <div class = "img2">
+    <%= image_tag 'logo.png' %>
+    </div>
+    </div>
+    <nav class="navbar">
+        <p>Home</p> <p>Sectors</p> <p>we cover</p>  <p>About us</p>
+        <p>For consumers</p>
+        <p>For participating companies</p>
+        <p>Company directory</p>
+        <p>News<p>
+      </ul>
+</nav>
     <%= yield %>
+        </div>
+    <div class="col-sm-2 sidenav">
+
+      </div>
+    </div>
+  </div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+  </div>
   </body>
 </html>
