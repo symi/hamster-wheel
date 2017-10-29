@@ -7,18 +7,24 @@ $(function () {
                 lat: $('p.latitude').text(),
                 lng: $('p.longitude').text()
               },
-              zoom: 8
+              zoom: 1
           });
-          map.addListener('click', function(e) {
-            placeMarkerAndPanTo(e.latLng, map);
-            });
-      }
+          map.addEventListener('contextmenu', function(e) {
+            console.log("CLICKED")
+            map.addMarker({
+              lat: e.latLng.lat,
+              lng: e.latLng.lng,
+        });
+      });
     };
-  });
-function placeMarkerAndPanTo(latLng, map) {
-  var marker = new google.maps.Marker({
-    position: latLng,
-    map: map
-  });
-  map.panTo(latLng);
-}
+  };
+});
+window.onload = function() {
+
+  // Normalize the various vendor prefixed versions of getUserMedia.
+  navigator.getUserMedia = (navigator.getUserMedia ||
+                            navigator.webkitGetUserMedia ||
+                            navigator.mozGetUserMedia ||
+                            navigator.msGetUserMedia);
+
+};
